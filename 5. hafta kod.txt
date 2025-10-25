@@ -1,0 +1,49 @@
+create database market2;
+go 
+use market2;
+go
+create table musteri1(
+musteri_numarasi int primary key,
+musteri_adi varchar(50),
+adres nchar(20));
+create table tedarikci1(
+tedarikci_numarası int primary key,
+tedarikci_adı varchar(50),
+tedarik_edilen_mal varchar(50));
+create table urun1(
+urun_barkodu int primary key,
+urun_adı varchar(50),
+urun_skt datetime,
+urun_fiyat_listesi smallmoney);
+
+
+insert into musteri1(musteri_numarasi,musteri_adi) values (5,'elif')
+alter table musteri1
+alter column musteri_tel_num int
+
+insert into  musteri1(musteri_numarasi,musteri_adi) values (1,'elif2')
+
+insert into  musteri1(musteri_numarasi,musteri_adi) values (2,'barıs')
+insert into  musteri1(musteri_numarasi,musteri_adi) values (3,'banu')
+insert into  musteri1(musteri_numarasi,musteri_adi) values (4,'zual')
+
+
+select * from musteri1
+where(musteri_adi='barıs')
+
+create table borc(
+borc_id int primary key,
+borc_miktari smallmoney,
+musteri_numarasi int);
+
+insert into borc(borc_id,musteri_numarasi,borc_miktari) values (1,5,300)
+insert into borc(borc_id,musteri_numarasi,borc_miktari) values (2,2,10) 
+insert into borc(borc_id,musteri_numarasi,borc_miktari) values (3,4,900) 
+insert into borc(borc_id,musteri_numarasi,borc_miktari) values (4,1,10000)
+
+update borc
+SET borc_miktari=1800
+WHERE borc_id =4
+
+select * from borc
+where borc_id =4  
