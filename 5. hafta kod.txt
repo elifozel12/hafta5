@@ -46,4 +46,7 @@ SET borc_miktari=1800
 WHERE borc_id =4
 
 select * from borc
+
 where borc_id =4  
+DELETE FROM musteri1
+WHERE(musteri='banu')
